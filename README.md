@@ -14,7 +14,7 @@ This is a web page application were user can login using google Oauth and upload
 Clone the project into local
 
 ```bash
-git clone https://github.com/Ram612/----.git
+git clone https://github.com/Ram612/client.git
 ```
 Install all the npm packages. Go to the project folder and type the following command to install all npm packages
 
@@ -25,12 +25,12 @@ npm install
 ## Environment variables
 create .env file to set your credentials
 
-AWS_ACCESS_KEY_ID="your acces id"
-AWS_SECRET_ACCESS_KEY=""
-AWS_BUCKET_NAME=""
-AWS_REGION=""
+1. AWS_ACCESS_KEY_ID="your acces id"
+2. AWS_SECRET_ACCESS_KEY=""
+3. AWS_BUCKET_NAME=""
+4. AWS_REGION=""
 
-GOOGLE_CLIENT_ID=""
+5. GOOGLE_CLIENT_ID=""
 
 ## Scripts
 In order to run the application type the following command
@@ -57,11 +57,20 @@ You may also see any lint errors in the console.
 Server ruuning on port 5000
 
 
-## Sample Output
+## Initial Output
+Initial Screen too the user asking to sign in to the application
 
-![Video transcription/translation app]()
+![Video transcription/translation app](https://github.com/Ram612/client/blob/a63fe76ad72b13b33cb2b4e2913411433a9ea313/public/images/Initial%20page%20for%20file%20uploader.png)
 
-![Video transcription/translation app]()
+## Authentication View Output
+Google Oauth view
 
-## Final Output
-![Video transcription/translation app]()
+![Video transcription/translation app](https://github.com/Ram612/client/blob/a63fe76ad72b13b33cb2b4e2913411433a9ea313/public/images/google%20Oauth%20for%20file%20uploader.png)
+
+## File Uploader Output
+File uploading view
+![Video transcription/translation app](https://github.com/Ram612/client/blob/a63fe76ad72b13b33cb2b4e2913411433a9ea313/public/images/After%20authentication%20view.png)
+
+## Final File uploaded View
+Uploaded file views
+![Video transcription/translation app](https://github.com/Ram612/client/blob/a63fe76ad72b13b33cb2b4e2913411433a9ea313/public/images/after%20file%20uploaded%20view.png)
