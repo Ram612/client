@@ -20,6 +20,11 @@ app.delete("/upload", (req, res) => {
     return res.status(200).json({ result: true, msg: 'file deleted' });
 });
 
+app.get('/download', (req, res) => {
+    console.log("File downloaded")
+    return res.download();
+})
+
 app.listen(5000, () => {
     console.log("server running on port 5000")
 });

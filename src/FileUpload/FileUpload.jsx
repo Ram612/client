@@ -4,7 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import './FileUpload.scss'
 import axios from 'axios'
 
-const FileUpload = ({ files, setFiles, removeFile }) => {
+const FileUpload = ({ files, setFiles, removeFile, saveFile }) => {
     const uploadHandler = (event) => {
         const file = event.target.files[0];
         if(!file) return;
@@ -27,6 +27,16 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
                 // inform the user
                 console.error(err)
                 removeFile(file.name)
+            });
+        axios.get('http://localhost:5000/download', formData)
+            .then((res) => {
+                file.isDownloading = true;
+                setFiles([...files, file])
+            })
+            .catch((err) => {
+                // inform the user
+                console.error(err)
+                saveFile(file.name)
             });
     }
 

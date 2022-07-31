@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 import './App.scss';
 import FileUpload from './FileUpload/FileUpload';
 import FileList from './FileList/FileList';
+import { saveAs } from "file-saver";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,6 +15,10 @@ function App() {
   const removeFile = (filename) => {
     setFiles(files.filter(file => file.name !== filename))
   }
+
+  const saveFile = (filename) => {
+    saveAs(files.filter(file => file.name !== filename))
+  };  
 
   function handleCallbackResponse(response) {
     // console.log("Encoded JWT ID token: " + response.credential);
@@ -75,7 +80,8 @@ function App() {
         <div id="uploadDiv">
           <FileUpload files={files} setFiles={setFiles}
             removeFile={removeFile} />
-          <FileList files={files} removeFile={removeFile} />
+          <FileList files={files} removeFile={removeFile} saveFile={saveFile}/>
+          
         </div>
       }
       <>
